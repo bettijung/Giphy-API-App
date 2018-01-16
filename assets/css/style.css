@@ -1,0 +1,19 @@
+body {
+
+}
+
+#button-section {
+
+}
+
+#animal-form {
+	border: thick blue;
+	float: right;
+}
+
+#gif-div{
+	float: left;
+	display: inline-block;
+
+}
+
