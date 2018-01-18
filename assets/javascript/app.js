@@ -1,18 +1,13 @@
 // Giphy App 
 
-// Buttons
-// Loop that appends a button for each string in the array
+// Array of animals
+var topics = ["dog", "horse", "cow", "deer", "giraffe", "lion", "tiger", "elephant", "ibis", "sheep", "pig", "eagle", "fox"];
 
-	var topics = ["dog", "horse", "cow", "deer", "giraffe", "lion", "tiger", "elephant", "ibis", "sheep", "pig", "eagle", "fox"];
-
-	
-
-
-// Button clicks to 
+// Function to dump gifs into div when user inputs animal and clicks button
 $("#select-animal").on("click", function(event) {
 	event.preventDefault();
 	var inputAnimal = $("#animal-input").val().trim();
-
+	
 	animalSearch(inputAnimal);
 });
 
@@ -37,30 +32,55 @@ function animalSearch(animal) {
 			animalImage.attr("src", results[i].images.fixed_height.url);
 			animalDiv.append(animalImage);
 			animalDiv.append(p);
-				
 
 			$("#gif-div").prepend(animalDiv);
 		}
 	});
 }
 
-for (var i = 0; i < topics.length 0; i++) {
-	
-	document.addEventListener()	
-	
-	$("#button-section").append(buttonDiv);
+
+// Function for displaying rendered buttons
+function renderButtons() {
+	$("#button-section").empty();
+
+	for (var i = 0; i < topics.length; i++) {
+	// Dynamically generate buttons for each movie in array
+		var x = $("<button>");
+		x.addClass("animal-btn");
+		x.attr("data-name", topics[i]);
+		x.text(topics[i]);
+		$("button-section").append(x);
+	}	
 }
+
+// Function
+$("#select-animal").on("click", function(event) {
+	event.preventDefault();
+	var inputAnimal = $("#animal-input").val().trim();
+	topics.push(inputAnimal);
+	renderButtons();
+});
+
+renderButtons();
+
+
+// $("#button-section").on("click", function() {
+//   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+//   var state = $(this).attr("data-state");
+  
+//   if (state === "still") {
+//     $(this).attr("src", $(this).attr("data-animate"));
+//     $(this).attr("data-state", "animate");
+//   } else {
+//     $(this).attr("src", $(this).attr("data-still"));
+//     $(this).attr("data-state", "still");
+//   }
+// });
 
 			
 
-// When user clicks on one of hte still Giphy images, hte gif shuld animate.
 
-
-
-// Add a Button
-
-	// Add a form to your page takes the value from a user input box and adds it into your topics array. 
-	// Then make a function call that takes each topic in the array remakes the buttons on the page
+// When user clicks on one of the still Giphy images, hte gif shuld animate.
 
 
 	

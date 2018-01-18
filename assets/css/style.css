@@ -3,17 +3,21 @@ body {
 }
 
 #button-section {
+	width: 100%;
+	margin-bottom: 20px;
+}
 
+#lower-section {
+	width: 100%;
 }
 
 #animal-form {
-	border: thick blue;
+	width: 30%;
 	float: right;
 }
 
-#gif-div{
+#gif-div {
+	width: 70%;
 	float: left;
-	display: inline-block;
-
 }
 
