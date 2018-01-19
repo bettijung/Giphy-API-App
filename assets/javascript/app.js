@@ -3,14 +3,13 @@
 // Array of animals
 var topics = ["dog", "horse", "cow", "deer", "giraffe", "lion", "tiger", "elephant", "ibis", "sheep", "pig", "eagle", "fox"];
 
-// Function to dump gifs into div when user inputs animal and clicks button
+// Function to dump gifs when user inputs animal and clicks button
 $("#select-animal").on("click", function(event) {
 	event.preventDefault();
 	var inputAnimal = $("#animal-input").val().trim();
 	
 	animalSearch(inputAnimal);
 });
-
 
 // Function that grabs gifs 
 function animalSearch(animal) {
@@ -49,11 +48,12 @@ function renderButtons() {
 		x.addClass("animal-btn");
 		x.attr("data-name", topics[i]);
 		x.text(topics[i]);
-		$("button-section").append(x);
+		$("#button-section").append(x);
 	}	
 }
 
-// Function
+
+// Function that adds newly inputed animals to array
 $("#select-animal").on("click", function(event) {
 	event.preventDefault();
 	var inputAnimal = $("#animal-input").val().trim();
@@ -61,7 +61,18 @@ $("#select-animal").on("click", function(event) {
 	renderButtons();
 });
 
+
+// Function that dumps gifs when animal buttons are clicked
+$("<button>").on("click", function(event) {
+	event.preventDefault();
+****	var inputAnimal = $("#animal-input").val().trim();
+	
+	animalSearch(inputAnimal);
+});
+
 renderButtons();
+
+
 
 
 // $("#button-section").on("click", function() {
